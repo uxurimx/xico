@@ -145,37 +145,52 @@
         </div>
     </section>
 
-    <section class="py-20 bg-gray-50">
+    <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-heading font-bold text-brand-black mb-4">Nos Services</h2>
-                <div class="w-20 h-1 bg-brand-yellow mx-auto"></div>
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-heading font-bold text-brand-black mb-3">Nos Services</h2>
+                <div class="w-16 h-1 bg-brand-yellow mx-auto"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition border-b-4 border-transparent hover:border-brand-yellow group">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-yellow transition">
-                        <i class="fas fa-home text-2xl text-brand-black"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition border-b-4 border-transparent hover:border-brand-yellow group">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-yellow transition">
+                        <i class="fas fa-home text-xl text-brand-black"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 font-heading">Résidentiel</h3>
-                    <p class="text-gray-600">Maisons, condos et chalets. Nous prenons soin de votre propriété avec délicatesse et efficacité.</p>
+                    <h3 class="text-lg font-bold mb-2 font-heading">Résidentiel</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Maisons, condos et chalets. Soin délicat et efficace pour votre propriété.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition border-b-4 border-transparent hover:border-brand-yellow group">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-yellow transition">
-                        <i class="fas fa-building text-2xl text-brand-black"></i>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition border-b-4 border-transparent hover:border-brand-yellow group">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-yellow transition">
+                        <i class="fas fa-building text-xl text-brand-black"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 font-heading">Commercial</h3>
-                    <p class="text-gray-600">Bureaux, magasins et immeubles. Donnez une image impeccable à votre entreprise.</p>
+                    <h3 class="text-lg font-bold mb-2 font-heading">Commercial</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Bureaux et magasins. Une image impeccable pour votre entreprise.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition border-b-4 border-transparent hover:border-brand-yellow group">
-                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-yellow transition">
-                        <i class="fas fa-hard-hat text-2xl text-brand-black"></i>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition border-b-4 border-transparent hover:border-brand-yellow group">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-yellow transition">
+                        <i class="fas fa-hard-hat text-xl text-brand-black"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 font-heading">Travail en Hauteur</h3>
-                    <p class="text-gray-600">Équipement spécialisé et sécurité garantie pour les vitres difficiles d'accès.</p>
+                    <h3 class="text-lg font-bold mb-2 font-heading">En Hauteur</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">Équipement spécialisé et sécurité garantie pour les accès difficiles.</p>
                 </div>
+
+                <div onclick="openGallery()" class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition border-b-4 border-transparent hover:border-brand-yellow group cursor-pointer relative overflow-hidden">
+                    <div class="absolute top-2 right-2 bg-brand-yellow text-xs font-bold px-2 py-1 rounded text-brand-black shadow-sm">
+                        <i class="fas fa-camera mr-1"></i> Photos
+                    </div>
+                    
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-yellow transition">
+                        <i class="fas fa-broom text-xl text-brand-black"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 font-heading">Après Construction</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2">Nettoyage minutieux post-rénovation. On élimine poussière et résidus.</p>
+                    <span class="text-xs text-brand-yellow font-bold underline">Voir la galerie</span>
+                </div>
+
             </div>
         </div>
     </section>
@@ -275,5 +290,111 @@
             document.getElementById("afterImage").style.width = val + "%";
         }
     </script>
+
+    <div id="galleryModal" class="hidden fixed inset-0 z-[100] bg-black bg-opacity-95 flex items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300">
+        
+        <button onclick="closeGallery()" class="absolute top-6 right-6 text-white text-4xl hover:text-brand-yellow transition focus:outline-none z-50 cursor-pointer">
+            &times;
+        </button>
+
+        <div class="relative w-full max-w-4xl max-h-screen flex items-center justify-center">
+            
+            <button onclick="prevImage()" class="absolute left-2 md:-left-16 text-white text-4xl hover:text-brand-yellow transition p-2 focus:outline-none cursor-pointer z-50">
+                &#10094;
+            </button>
+            
+            <img id="modalImage" src="" alt="Après Construction" class="max-h-[80vh] max-w-full rounded-lg shadow-2xl border border-gray-800 object-contain">
+            
+            <button onclick="nextImage()" class="absolute right-2 md:-right-16 text-white text-4xl hover:text-brand-yellow transition p-2 focus:outline-none cursor-pointer z-50">
+                &#10095;
+            </button>
+            
+            <div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 text-gray-400 text-sm tracking-widest font-mono">
+                <span id="currentIndex">1</span> / <span id="totalIndex">3</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Aseguramos que el código corra cuando el HTML ya exista
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // --- CONFIGURACIÓN DE TUS FOTOS ---
+            // Cambia estas URLs por los nombres de tus archivos (ej: 'foto1.jpg')
+            const constructionImages = [
+                'd1.jpeg',
+                'd2.jpeg',
+            ];
+
+            // Referencias a los elementos HTML
+            const modal = document.getElementById('galleryModal');
+            const modalImg = document.getElementById('modalImage');
+            const currentSpan = document.getElementById('currentIndex');
+            const totalSpan = document.getElementById('totalIndex');
+
+            // Variables de control
+            let currentImgIndex = 0;
+
+            // Verificación de seguridad (para evitar el error null)
+            if (!modal || !modalImg || !totalSpan) {
+                console.error("Error: No se encontraron los elementos del modal en el HTML.");
+                return;
+            }
+
+            // Inicializar contador total
+            totalSpan.innerText = constructionImages.length;
+
+            // Funciones globales (window.function) para que el HTML pueda llamarlas con onclick=""
+            
+            window.openGallery = function() {
+                modal.classList.remove('hidden');
+                showImage(0); 
+                document.body.style.overflow = 'hidden'; 
+            }
+
+            window.closeGallery = function() {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; 
+            }
+
+            window.showImage = function(index) {
+                currentImgIndex = index;
+                modalImg.style.opacity = 0.5; // Efecto fade out
+                
+                setTimeout(() => {
+                    modalImg.src = constructionImages[currentImgIndex];
+                    modalImg.style.opacity = 1; // Efecto fade in
+                }, 150);
+                
+                if(currentSpan) currentSpan.innerText = currentImgIndex + 1;
+            }
+
+            window.nextImage = function() {
+                let nextIndex = (currentImgIndex + 1) % constructionImages.length;
+                window.showImage(nextIndex);
+            }
+
+            window.prevImage = function() {
+                let prevIndex = (currentImgIndex - 1 + constructionImages.length) % constructionImages.length;
+                window.showImage(prevIndex);
+            }
+
+            // Cerrar con click fuera
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    window.closeGallery();
+                }
+            });
+
+            // Teclado
+            document.addEventListener('keydown', function(e) {
+                if (modal.classList.contains('hidden')) return;
+                if (e.key === 'Escape') window.closeGallery();
+                if (e.key === 'ArrowRight') window.nextImage();
+                if (e.key === 'ArrowLeft') window.prevImage();
+            });
+        });
+    </script>
+
 </body>
 </html>
